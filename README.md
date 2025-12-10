@@ -2,18 +2,24 @@
 
 **The new leader on the world's most challenging AI benchmark**
 
+> **Note**: Individual model scores below are higher than their published benchmarks because we use custom instructions, an agentic loop, web search, and retry when confidence is too low. This causes **all** models to score higher than published results. However, relative rankings remain consistent with published results, and Sup AI maintains a significant lead.
+
 ![Model Accuracy Comparison](metrics.png)
 
 ## Summary
 
-[Sup AI](https://sup.ai) has achieved **52.15% accuracy** on [Humanity's Last Exam (HLE)](https://lastexam.ai/), surpassing all individual frontier models and setting a new state-of-the-art on this exceptionally challenging benchmark. This result demonstrates that multi-model orchestration can unlock capabilities beyond what any single model achieves alone.
+[Sup AI](https://sup.ai) has achieved **52.15% accuracy** on [Humanity's Last Exam (HLE)](https://lastexam.ai/), surpassing all individual frontier models and setting a new SOTA on this exceptionally challenging benchmark. This result demonstrates that multi-model orchestration can unlock capabilities beyond what any single model achieves alone.
 
 | Metric | Value |
 |--------|-------|
 | **Accuracy** | 52.15% |
-| **Questions Evaluated** | 1,369 / 2,500 public |
+| **Questions Evaluated** | 1,369 / 2,500 public* |
 | **Lead Over Next Best** | +7.49 percentage points |
-| **Calibration Error (ECE)** | 35.22% |
+| **Calibration Error (ECE)** | 35.22%** |
+
+\* Questions were selected randomly. We plan to evaluate all 2,500 public questions.
+
+\** Expected Calibration Error measures how well a model's confidence scores match its actual accuracy. An ECE of 35.22% means the model's stated confidence is, on average, 35.22 percentage points away from its true accuracy—indicating the model is significantly overconfident. We at Sup AI believe the way that the HLE benchmark measures "confidence" (asking the model how confident it is) is fundamentally flawed, and that can only truly be measured with logprobs, which we use extensively internally.
 
 ## What is Humanity's Last Exam?
 
@@ -42,9 +48,9 @@ Sup AI's multi-model approach significantly outperforms all individual frontier 
 
 ## How Sup AI Works
 
-Sup AI orchestrates multiple frontier models that are best suited for the prompt, aggregating their responses to produce higher-quality answers than any individual model. We use logprob analysis on each individual response and each "chunk" of each response in order to determine how confident the model is.
+Sup AI orchestrates multiple frontier models that are best suited for the prompt, aggregating their responses to produce higher-quality answers than any individual model. We look at the probability distributions on each individual response and chunks of each response when appropriate in order to determine confidence.
 
-We only include high-confidence portions of each response in the consensus. If there are significant disagreements within models, we will retry. If the confidence is too low, we will retry. We will also weight responses that align with a model's specialty as most likely more accurate.
+When synthesizing overall responses, we weigh individual response chunks by our confidence. If there are significant disagreements within models or their confidence is too low, we will retry. The degree to which a model specializes in what the prompt is about is factored into the weight we assign it.
 
 Not all of the models Sup AI uses are multimodal, while some HLE questions involve images. Sup AI allows you to pass PDFs and images to models that don't natively support them by pre-processing the files.
 
@@ -123,15 +129,6 @@ With n=1,369 questions, the 95% confidence interval for Sup AI's accuracy is app
 
 The gap between Sup AI (52.15%) and the next-best model, Gemini 3 Pro Preview (44.66%), is statistically significant at p < 0.001.
 
-> Why did Gemini 3 Pro Preview get a higher HLE score than published?
-
-- Custom instructions
-- Agentic loop
-- Web search
-- Retrying when confidence score (calculated with logprobs) is too low
-
-This will cause **all** models to get higher-than-published results. However, relative scores are about the same as published results, and most notably we are significantly better in terms of relative score (and raw score).
-
 ## Implications
 
 This result demonstrates several important findings:
@@ -142,7 +139,7 @@ This result demonstrates several important findings:
 
 3. **Benchmark validity**: Despite exceeding 50% accuracy, significant headroom remains—indicating HLE continues to effectively measure frontier AI capabilities.
 
-4. **Practical accessibility**: These capabilities are available today through Sup AI, enabling applications requiring state-of-the-art reasoning.
+4. **Practical accessibility**: These capabilities are available today through Sup AI, enabling applications requiring SOTA reasoning.
 
 ## Accuracy for each question
 
