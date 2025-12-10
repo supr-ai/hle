@@ -19,7 +19,7 @@
 
 \* Questions were selected randomly. We plan to evaluate all 2,500 public questions.
 
-\** HLE measures Expected Calibration Error (ECE) by asking models to self-report their confidence, which we believe is fundamentally flawed; confidence can only truly be measured by analyzing output token probability distributions. An ECE of 35.22% means the model's stated confidence is, on average, 35.22 percentage points away from its true accuracy.
+\** HLE measures Expected Calibration Error (ECE) by asking models to self-report their confidence, which we believe is fundamentally flawed; confidence can only truly be measured by analyzing output token probability distributions (Sup AI uses these extensively). An ECE of 35.22% means the model's stated confidence is, on average, 35.22 percentage points away from its true accuracy.
 
 ## What is Humanity's Last Exam?
 
