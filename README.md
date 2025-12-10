@@ -2,13 +2,13 @@
 
 **The new leader on the world's most challenging AI benchmark**
 
-> **Note**: Individual model scores below are higher than their published benchmarks because we use custom instructions, an agentic loop, web search, and retry when confidence is too low. This causes **all** models to score higher than published results. However, relative rankings remain consistent with published results, and Sup AI maintains a significant lead.
+> **Note**: Individual model scores below are higher than their published benchmarks because we use custom instructions, web search, and retry when confidence is too low. This causes **all** models to score higher than published results. However, relative rankings remain consistent with published results, and Sup AI maintains a significant lead.
 
 ![Model Accuracy Comparison](metrics.png)
 
 ## Summary
 
-[Sup AI](https://sup.ai) has achieved **52.15% accuracy** on [Humanity's Last Exam (HLE)](https://lastexam.ai/), surpassing all individual frontier models and setting a new SOTA on this exceptionally challenging benchmark. This result demonstrates that multi-model orchestration can unlock capabilities beyond what any single model achieves alone.
+[Sup AI](https://sup.ai) has achieved **52.15% accuracy** on [Humanity's Last Exam (HLE)](https://lastexam.ai/), surpassing all individual frontier models and setting a new SOTA on this exceptionally challenging benchmark. This result demonstrates that ensemble orchestration can unlock capabilities beyond what any single model achieves alone.
 
 | Metric | Value |
 |--------|-------|
@@ -29,7 +29,7 @@ Unlike conventional benchmarks that have become saturated, HLE was specifically 
 
 ## Results Comparison
 
-Sup AI's multi-model approach significantly outperforms all individual frontier models:
+Sup AI's ensemble approach significantly outperforms all individual frontier models:
 
 | Model | Accuracy | n | Δ vs Sup AI |
 |-------|----------|---|-------------|
@@ -63,7 +63,7 @@ Sup AI achieves emergent capabilities that exceed the sum of its parts.
 1. **Question Selection**: Questions were chosen at random from the 2,500 public HLE questions
 2. **Question Processing**: Each HLE question (text and optional image) is submitted to the Sup AI API
 3. **Response Format**: Models respond with structured output containing explanation, answer, and confidence score
-4. **Automated Judging**: Responses are evaluated using GPT-5.1 with structured output parsing (100% reliability via Pydantic strict mode)
+4. **Automated Judging**: Responses are evaluated using GPT-5.1 with structured output parsing (Pydantic strict mode)
 5. **Metrics Calculation**: Accuracy, variance (Wald estimator), and Expected Calibration Error (ECE) are computed
 
 The responses are generated **exactly** as if you pasted the question into Sup AI's chat interface at <https://sup.ai>. There is no custom prompting for benchmarks. Even the system prompt is inserted in place of the user instructions, which any user can edit.
@@ -101,7 +101,7 @@ pip3.13 install -r requirements.txt
 ```
 
 Required environment variables:
-- `SUPAI_API_KEY`: Your Sup AI API key (not publicly available yet, coming very soon)
+- `SUPAI_API_KEY`: Your Sup AI API key (contact us)
 - `OPENAI_API_KEY`: OpenAI API key (for judging)
 
 ### Run Evaluation
@@ -133,7 +133,7 @@ The gap between Sup AI (52.15%) and the next-best model, Gemini 3 Pro Preview (4
 
 This result demonstrates several important findings:
 
-1. **Multi-model systems exceed individual model capabilities**: The ensemble approach achieves accuracy 7+ percentage points higher than the best single model.
+1. **Ensemble systems can exceed individual model capabilities**: The ensemble approach achieves accuracy 7+ percentage points higher than the best single model.
 
 2. **Complementary model strengths**: Different models excel at different problem types; orchestration captures these diverse capabilities.
 
