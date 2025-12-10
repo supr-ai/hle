@@ -168,7 +168,7 @@ If you use these results or methodology, please cite:
   title={Sup AI Achieves 52.15% on Humanity's Last Exam},
   author={Sup AI},
   year={2025},
-  url={https://github.com/supr-ai/hle}
+  url={https://github.com/supaihq/hle}
 }
 ```
 
