@@ -1,0 +1,116 @@
+{
+  "main": {
+    "accuracy": 52.15,
+    "variance": 1.8228,
+    "n": 1369,
+    "calibration_error": 35.22
+  },
+  "alibaba/qwen3-max": {
+    "accuracy": 17.65,
+    "variance": 28.4958,
+    "n": 51,
+    "calibration_error": 50.89
+  },
+  "mistral/mistral-large": {
+    "accuracy": 6.06,
+    "variance": 8.6262,
+    "n": 66,
+    "calibration_error": 64.18
+  },
+  "zai/glm-4.6": {
+    "accuracy": 23.08,
+    "variance": 34.1375,
+    "n": 52,
+    "calibration_error": 49.63
+  },
+  "anthropic/claude-opus-4.5": {
+    "accuracy": 29.56,
+    "variance": 1.562,
+    "n": 1333,
+    "calibration_error": 53.9
+  },
+  "anthropic/claude-sonnet-4.5": {
+    "accuracy": 18.06,
+    "variance": 1.1772,
+    "n": 1257,
+    "calibration_error": 60.42
+  },
+  "google/gemini-3-pro-preview": {
+    "accuracy": 44.66,
+    "variance": 1.8583,
+    "n": 1330,
+    "calibration_error": 61.84
+  },
+  "openai/gpt-5.1": {
+    "accuracy": 38.18,
+    "variance": 1.8354,
+    "n": 1286,
+    "calibration_error": 44.95
+  },
+  "xai/grok-4": {
+    "accuracy": 29.02,
+    "variance": 1.7895,
+    "n": 1151,
+    "calibration_error": 50.94
+  },
+  "mistral/magistral-medium": {
+    "accuracy": 13.51,
+    "variance": 31.5875,
+    "n": 37,
+    "calibration_error": 46.11
+  },
+  "alibaba/qwen3-next-80b-a3b-thinking": {
+    "accuracy": 16.46,
+    "variance": 17.4023,
+    "n": 79,
+    "calibration_error": 51.67
+  },
+  "minimax/minimax-m2": {
+    "accuracy": 16.67,
+    "variance": 231.4815,
+    "n": 6,
+    "calibration_error": null
+  },
+  "moonshotai/kimi-k2-thinking-turbo": {
+    "accuracy": 17.57,
+    "variance": 1.1669,
+    "n": 1241,
+    "calibration_error": 69.58
+  },
+  "openai/gpt-5-pro": {
+    "accuracy": 39.43,
+    "variance": 2.0036,
+    "n": 1192,
+    "calibration_error": 48.04
+  },
+  "google/gemini-2.5-flash": {
+    "accuracy": 0.0,
+    "variance": 0.0,
+    "n": 2,
+    "calibration_error": null
+  },
+  "alibaba/qwen3-vl-thinking": {
+    "accuracy": 33.33,
+    "variance": 740.7407,
+    "n": 3,
+    "calibration_error": null
+  },
+  "google/gemini-2.5-pro": {
+    "accuracy": 16.51,
+    "variance": 1.0991,
+    "n": 1254,
+    "calibration_error": 76.77
+  },
+  "deepseek/deepseek-v3.2-thinking": {
+    "accuracy": 24.08,
+    "variance": 1.5613,
+    "n": 1171,
+    "calibration_error": 53.43
+  },
+  "deepseek/deepseek-v3.2-exp-thinking": {
+    "accuracy": 0.0,
+    "variance": 0.0,
+    "n": 1,
+    "calibration_error": null
+  }
+}
